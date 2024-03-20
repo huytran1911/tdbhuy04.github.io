@@ -1,0 +1,71 @@
+[
+{
+	"uri": "/",
+	"title": "Connecting to and querying SQL Server using AWS Relational Database Service (RDS) with SQL Server Management Studio.",
+	"tags": [],
+	"description": "",
+	"content": "Connecting to and querying SQL Server using AWS Relational Database Service (RDS) with SQL Server Management Studio. OverView In this tutorial, you will learn how to create a Microsoft SQL Server database, connect to the database, execute queries in SSMS and delete the database. We will accomplish this using the Relational Database Service (Amazon RDS). Everything in this tutorial is free tier.\nContent Introduction Create RDS and connect to SSMS Fix connection error with SSMS Query SQL Server instance using SSMS Delete the RDS SQL Server Database "
+},
+{
+	"uri": "/2-createrdsandconnecttossms/2.1-create-rds/",
+	"title": "Create RDS",
+	"tags": [],
+	"description": "",
+	"content": "Create RDS Access the AWS Management Console:\nNavigate to RDS In the RDS interface\nSelect Databases Choose Create database In the Create database\nChoose Easy create Choose Microsoft SQL Server Choose Free tier In the DB instance identifier, enter database-1 In the Master username, enter admin Enter your Master password and then Confirm master password Select View default settings for Easy create You will see how the database is configured. this is how the database is configured Choose Create database to finish create RDS "
+},
+{
+	"uri": "/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Relational Database Relational Database is a data storage system organized into structured tables. Each table can contain multiple rows and columns, where each row corresponds to a specific data record and each column represents an attribute of that data.\nThe relationships between tables are determined through foreign keys, allowing data to be linked and referenced across different tables.\nMicrosoft SQL Server is a popular relational database management system (RDBMS) that provides efficient database management and optimization capabilities.\nAmazon RDS Amazon RDS is a managed database service on the Amazon Web Services (AWS) cloud, allowing users to easily deploy, manage, and scale popular relational databases such as MySQL, PostgreSQL, Oracle, and SQL Server.\nWith Amazon RDS, users do not need to worry about infrastructure management tasks such as server deployment, data backups, software updates, and data recovery, as AWS automatically handles these tasks.\nMicrosoft SQL Server on Amazon RDS Amazon RDS supports multiple relational database engines, including Microsoft SQL Server. Using SQL Server on RDS helps users save time and effort in deploying and managing databases, with automated features such as data backups, patch management, and minimizing system downtime.\nContent Introduction Create RDS and connect to SSMS Fix connection error with SSMS Query SQL Server instance using SSMS Delete the RDS SQL Server Database "
+},
+{
+	"uri": "/2-createrdsandconnecttossms/2.2-connect-to-ssms/",
+	"title": "Connect to SSMS",
+	"tags": [],
+	"description": "",
+	"content": "Connect to SSMS Server type: Database Engine\nServer name: Copy your Endpoint, afterwards, add your portnumber at the end of the Endpoint with comma between it. For example, your sever name look like database-1.cr2i22uge2rv.ap-southeast-1.rds.amazonaws.com,1433\nAuthentication: SQL Server Authentication\nType in the username you created for the Amazon RDS database. Our example is admin.\nThe Connect to Server interface look like this.\nChoose connect\nIf you encounter an error while connecting to the database, please proceed to troubleshoot in the following steps.\n"
+},
+{
+	"uri": "/2-createrdsandconnecttossms/",
+	"title": "Create RDS and connect to SSMS",
+	"tags": [],
+	"description": "",
+	"content": "Create RDS and connect to SSMS in this step, we will create a Relational Database Service (RDS) instance and connect to SQL Server Management Studio (SSMS).\nContent Introduction Create RDS and connect to SSMS Fix connection error with SSMS Query SQL Server instance using SSMS Delete the RDS SQL Server Database "
+},
+{
+	"uri": "/3-fixconnectionerrorwithssms/",
+	"title": "Fix connection error with SSMS",
+	"tags": [],
+	"description": "",
+	"content": "Fix connection error with SSMS Let\u0026rsquo;s go back to the recently created database. Choose Modify\nDrag down to the Connectivity Expand the Additional configuration Select Publicly accessible Choose Continue\nIn the Schedule modifications Select Apply immediately Choose Modify DB instance In the Connectivity \u0026amp; Security Choose VPC Security Groups. Choose Edit inbound rules\nIn the inbound rules\nChoose Add rule Type: MSSQL Source: My IP Save rules You have successfully resolved the connection error with SSMS.\nThe following table shows error messages that you might encounter when you attempt to connect to your SQL Server DB instance.\nIssue Troubleshooting suggestions Could not open a connection to SQL Server – Microsoft SQL Server, Error: 53 Make sure that you specified the server name correctly. For Server name, enter the DNS name and port number of your sample DB instance, separated by a comma. Important If you have a colon between the DNS name and port number, change the colon to a comma. Your server name should look like the following example. database-1.cr2i22uge2rv.ap-southeast-1.rds.amazonaws.com,1433 No connection could be made because the target machine actively refused it – Microsoft SQL Server, Error: 10061 You were able to reach the DB instance but the connection was refused. This issue is usually caused by specifying the user name or password incorrectly. Verify the user name and password, then retry. A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible\u0026hellip; The wait operation timed out – Microsoft SQL Server, Error: 258 The access rules enforced by your local firewall and the IP addresses authorized to access your DB instance might not match. The problem is most likely the inbound rules in your security group. Your database instance must be publicly accessible. To connect to it from outside of the VPC, the instance must have a public IP address assigned "
+},
+{
+	"uri": "/4-sqlquery/",
+	"title": "Query a SQL Server instance using SSMS",
+	"tags": [],
+	"description": "",
+	"content": "Query a SQL Server instance using SSMS 1. Create a database Now let\u0026rsquo;s create a database named TutorialDB by following the below steps:\nRight-click your server instance in Object Explorer, and then select New Query\nCopy and Paste the following T-SQL code snippet into the query window:\nUSE master\rGO\rIF NOT EXISTS (\rSELECT name\rFROM sys.databases\rWHERE name = N\u0026#39;TutorialDB\u0026#39;\r)\rCREATE DATABASE [TutorialDB]\rGO Execute the query by selecting Execute or selecting F5 on your keyboard.\nAfter the query is complete, the new TutorialDB database appears in the list of databases in Object Explorer. If it isn\u0026rsquo;t displayed, right-click the Databases node, and then select Refresh.\nIn the database dropdown list, select the database that you want, as shown here:\nPaste the following T-SQL code snippet into the query window:\nUSE [TutorialDB]\r-- Create a new table called \u0026#39;Customers\u0026#39; in schema \u0026#39;dbo\u0026#39;\r-- Drop the table if it already exists\rIF OBJECT_ID(\u0026#39;dbo.Customers\u0026#39;, \u0026#39;U\u0026#39;) IS NOT NULL\rDROP TABLE dbo.Customers\rGO\r-- Create the table in the specified schema\rCREATE TABLE dbo.Customers (\rCustomerId INT NOT NULL PRIMARY KEY, -- primary key column\rName NVARCHAR(50) NOT NULL,\rLocation NVARCHAR(50) NOT NULL,\rEmail NVARCHAR(50) NOT NULL\r);\rGO Execute the query by selecting Execute or selecting F5 on your keyboard.\nAfter the query is complete, the new Customers table is displayed in the list of tables in Object Explorer. If the table isn\u0026rsquo;t displayed, right-click the TutorialDB \u0026gt; Tables in Object Explorer, and then select Refresh.\n2. Insert rows Now let\u0026rsquo;s insert some rows into the Customers table that you created.\nPaste the following T-SQL code snippet into the query window, and then select Execute:\n-- Insert rows into table \u0026#39;Customers\u0026#39;\rINSERT INTO dbo.Customers\r([CustomerId],[Name],[Location],[Email])\rVALUES\r( 1, N\u0026#39;Orlando\u0026#39;, N\u0026#39;Australia\u0026#39;, N\u0026#39;\u0026#39;),\r( 2, N\u0026#39;Keith\u0026#39;, N\u0026#39;India\u0026#39;, N\u0026#39;keith0@adventure-works.com\u0026#39;),\r( 3, N\u0026#39;Donna\u0026#39;, N\u0026#39;Germany\u0026#39;, N\u0026#39;donna0@adventure-works.com\u0026#39;),\r( 4, N\u0026#39;Janet\u0026#39;, N\u0026#39;United States\u0026#39;, N\u0026#39;janet1@adventure-works.com\u0026#39;)\rGO 3. Query the table and view the results The results of a query are visible below the query text window. To query the Customers table and view the rows that were inserted, paste the following T-SQL code snippet into the query window, and then select Execute:\nSELECT * FROM dbo.Customers; The query results are displayed under the area where the text was entered:\nwe have completed creating and querying the database. Now, let\u0026rsquo;s move on to the next step to delete the RDS\n"
+},
+{
+	"uri": "/5-cleanupresource/",
+	"title": "Clean up Resouce",
+	"tags": [],
+	"description": "",
+	"content": "Delete RDS SQL Server database Back to the RDS interface in AWS Console\nSelect Databases Choose the database you want to delete, our example is database-1 Select Actions Select Delete Unselect Create final snapshot and Retain automated backups Select i acknowledge that upon instance deletion, automated backups, including system Type delete me to confirm deletion. Select Delete So we have completed this hands-on lab. Wishing you all success!\n"
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

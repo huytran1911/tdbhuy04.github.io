@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Connecting to and querying SQL Server using AWS Relational Database Service (RDS) with SQL Server Management Studio. on Start with Amazon VPC and AWS VPN Site-to-Site.</title>
+    <link>/</link>
+    <description>Recent content in Connecting to and querying SQL Server using AWS Relational Database Service (RDS) with SQL Server Management Studio. on Start with Amazon VPC and AWS VPN Site-to-Site.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connect to SSMS</title>
+      <link>/2-createrdsandconnecttossms/2.2-connect-to-ssms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/2-createrdsandconnecttossms/2.2-connect-to-ssms/</guid>
+      <description>Connect to SSMS Server type: Database Engine&#xA;Server name: Copy your Endpoint, afterwards, add your portnumber at the end of the Endpoint with comma between it. For example, your sever name look like database-1.cr2i22uge2rv.ap-southeast-1.rds.amazonaws.com,1433&#xA;Authentication: SQL Server Authentication&#xA;Type in the username you created for the Amazon RDS database. Our example is admin.&#xA;The Connect to Server interface look like this.&#xA;Choose connect&#xA;If you encounter an error while connecting to the database, please proceed to troubleshoot in the following steps.</description>
+    </item>
+  </channel>
+</rss>

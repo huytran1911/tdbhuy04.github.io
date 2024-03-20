@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kết nối và truy vấn SQL Server bằng cách sử dụng AWS Relational Database Service (RDS) với SQL Server Management Studio (SSMS).  on Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
+    <link>/vi/</link>
+    <description>Recent content in Kết nối và truy vấn SQL Server bằng cách sử dụng AWS Relational Database Service (RDS) với SQL Server Management Studio (SSMS).  on Bắt đầu với Amazon VPC và AWS VPN Site to Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi</language>
+    <atom:link href="/vi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kết nối với SSMS</title>
+      <link>/vi/2-createrdsandconnecttossms/2.2-connect-to-ssms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/vi/2-createrdsandconnecttossms/2.2-connect-to-ssms/</guid>
+      <description>Kết nối với SSMS Server type: Database Engine&#xA;Server name: Sao chép Endpoint &amp;amp; port của bạn. Sau đó, thêm portnumber của bạn vào cuối Endpoint với dấu phẩy giữa chúng. Ví dụ, Server name của bạn sẽ giống như: database-1.cr2i22uge2rv.ap-southeast-1.rds.amazonaws.com,1433&#xA;Authentication: SQL Server Authentication&#xA;Nhập Username bạn đã tạo cho cơ sở dữ liệu Amazon RDS. Ví dụ của tôi là admin.&#xA;Giao diện Connect to Server trông như thế này.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,71 @@
+[
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu ",
+	"tags": [],
+	"description": "",
+	"content": "Relational Database Relational Database (Cơ sở dữ liệu quan hệ) là một hệ thống lưu trữ dữ liệu được tổ chức thành các bảng có cấu trúc. Mỗi bảng có thể chứa nhiều hàng và cột, trong đó mỗi hàng tương ứng với một bản ghi dữ liệu cụ thể và mỗi cột đại diện cho một thuộc tính của dữ liệu đó.\nMối quan hệ giữa các bảng được xác định thông qua các khóa ngoại, cho phép dữ liệu được liên kết và tham chiếu giữa các bảng khác nhau.\nMicrosoft SQL Server là một hệ thống quản lý cơ sở dữ liệu quan hệ (RDBMS) phổ biến, cung cấp khả năng quản lý và tối ưu hóa cơ sở dữ liệu hiệu quả.\nAmazon RDS Amazon RDS là một dịch vụ quản lý cơ sở dữ liệu trên đám mây của Amazon Web Services (AWS), cho phép người dùng dễ dàng triển khai, quản lý và mở rộng các cơ sở dữ liệu quan hệ phổ biến như MySQL, PostgreSQL, Oracle và SQL Server.\nVới Amazon RDS, người dùng không cần phải lo lắng về các vấn đề liên quan đến quản lý cơ sở hạ tầng như triển khai máy chủ, bản sao lưu dữ liệu, cập nhật phần mềm và khôi phục dữ liệu, vì AWS sẽ tự động thực hiện những công việc này.\nMicrosoft SQL Server trên Amazon RDS Amazon RDS hỗ trợ nhiều hệ thống cơ sở dữ liệu quan hệ, bao gồm cả Microsoft SQL Server. Việc sử dụng SQL Server trên RDS giúp người dùng tiết kiệm thời gian và công sức trong việc triển khai và quản lý cơ sở dữ liệu, với các tính năng tự động hóa như sao lưu dữ liệu, quản lý bản vá, và giảm thiểu thời gian chết của hệ thống.\nNội dung Giới thiệu Tạo và kết nối RDS với SSMS Sửa lỗi kết nối với SSMS Truy vấn SQL Server bằng SSMS Xoá RDS SQL Server Database "
+},
+{
+	"uri": "/vi/",
+	"title": "Kết nối và truy vấn SQL Server bằng cách sử dụng AWS Relational Database Service (RDS) với SQL Server Management Studio (SSMS). ",
+	"tags": [],
+	"description": "",
+	"content": "Kết nối và truy vấn SQL Server bằng cách sử dụng AWS Relational Database Service (RDS) với SQL Server Management Studio (SSMS). Tổng quan Trong bài hướng dẫn này, bạn sẽ được hướng dẫn cách tạo một cơ sở dữ liệu Microsoft SQL Server, kết nối vào cơ sở dữ liệu, thực hiện các truy vấn trong SSMS và xóa cơ sở dữ liệu. Chúng tôi sẽ thực hiện điều này bằng cách sử dụng Dịch vụ Cơ sở dữ liệu Tương quan (Amazon RDS). Mọi thứ trong bài hướng dẫn này đều miễn phí.\nNội dung Giới thiệu Tạo và kết nối RDS với SSMS Sửa lỗi kết nối với SSMS Truy vấn SQL Server bằng SSMS Xoá RDS SQL Server Database "
+},
+{
+	"uri": "/vi/2-createrdsandconnecttossms/2.1-create-rds/",
+	"title": "tạo RDS",
+	"tags": [],
+	"description": "",
+	"content": "Tạo RDS Truy cập AWS Management Console\nDi chuyển đến RDS Trong giao diện RDS\nChọn Databases Chọn Create database Trong phần Create database\nChọn Easy create Chọn Microsoft SQL Server Chọn Free tier Trong phần DB instance identifier, nhập database-1 Trong phần Master username, nhập admin Nhập Master password của bạn và sau đó Confirm master password Chọn View default settings for Easy create Bạn sẽ thấy cách database được cấu hình. Đây là cách mà database được cấu hình. Chọn Create database Để kết thúc tạo RDS "
+},
+{
+	"uri": "/vi/2-createrdsandconnecttossms/2.2-connect-to-ssms/",
+	"title": "Kết nối với SSMS",
+	"tags": [],
+	"description": "",
+	"content": "Kết nối với SSMS Server type: Database Engine\nServer name: Sao chép Endpoint \u0026amp; port của bạn. Sau đó, thêm portnumber của bạn vào cuối Endpoint với dấu phẩy giữa chúng. Ví dụ, Server name của bạn sẽ giống như: database-1.cr2i22uge2rv.ap-southeast-1.rds.amazonaws.com,1433\nAuthentication: SQL Server Authentication\nNhập Username bạn đã tạo cho cơ sở dữ liệu Amazon RDS. Ví dụ của tôi là admin.\nGiao diện Connect to Server trông như thế này.\nChọn connect\nnếu bạn gặp lỗi trong quá trình kết nối với SSMS thì hãy xem quá trình sửa lỗi ở bước tiếp theo.\n"
+},
+{
+	"uri": "/vi/2-createrdsandconnecttossms/",
+	"title": "Tạo RDS và kết nối với SSMS",
+	"tags": [],
+	"description": "",
+	"content": "Tạo RDS và kết nối với SSMS Trong bước này, chúng ta sẽ tạo Relational Database Service (RDS) và kết nối vào SQL Server Management Studio (SSMS).\nNội dung Giới thiệu Tạo và kết nối RDS với SSMS Sửa lỗi kết nối với SSMS Truy vấn SQL Server bằng SSMS Xoá RDS SQL Server Database "
+},
+{
+	"uri": "/vi/3-fixconnectionerrorwithssms/",
+	"title": "Sửa lỗi kết nối với SSMS",
+	"tags": [],
+	"description": "",
+	"content": "Sửa lỗi kết nối với SSMS Hãy trở lại với database vừa được tạo. Chọn Modify\nKéo xuống phần Connectivity Mở rộng Additional configuration Chọn Publicly accessible Chọn Continue\nTrong phần Schedule modifications Chọn Apply immediately Chọn Modify DB instance Trong phần Connectivity \u0026amp; Security Chọn VPC Security Groups. Chọn Edit inbound rules\nTrong phần inbound rules\nChọn Add rule Type: MSSQL Source: My IP Chọn Save rules Vậy là bạn đã khắc phục xong lỗi kết nối với SSMS\nBảng dưới đây hiển thị các thông báo lỗi mà bạn có thể gặp khi bạn kết nối tới cơ sở dữ liệu SQL Server của bạn.\nVấn đề Gợi ý để khắc phục sự cố Could not open a connection to SQL Server – Microsoft SQL Server, Error: 53 Đảm bảo bạn đã chỉ định đúng tên máy chủ. Đối với tên máy chủ, nhập tên DNS và số cổng của instance cơ sở dữ liệu mẫu của bạn, được phân tách bằng dấu phẩy. Quan trọng nếu bạn có một dấu hai chấm giữa tên DNS và số cổng, hãy thay thế dấu hai chấm bằng dấu phẩy. Tên máy chủ của bạn nên trông giống như ví dụ sau. database-1.cr2i22uge2rv.ap-southeast-1.rds.amazonaws.com,1433 No connection could be made because the target machine actively refused it – Microsoft SQL Server, Error: 10061 Bạn đã kết nối được tới instance cơ sở dữ liệu nhưng kết nối đã bị từ chối. Vấn đề này thường xuất phát từ việc chỉ định tên người dùng hoặc mật khẩu không chính xác. Xác minh lại tên người dùng và mật khẩu, sau đó thử lại. A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible\u0026hellip; The wait operation timed out – Microsoft SQL Server, Error: 258 Các quy tắc truy cập được áp dụng bởi tường lửa cục bộ của bạn và các địa chỉ IP được ủy quyền để truy cập vào instance cơ sở dữ liệu của bạn có thể không khớp. Vấn đề có thể xuất phát từ các quy tắc truy cập đến trong nhóm bảo mật của bạn. Instance cơ sở dữ liệu của bạn phải có thể truy cập từ xa. Để kết nối tới nó từ bên ngoài của VPC, instance phải có một địa chỉ IP công cộng được gán. "
+},
+{
+	"uri": "/vi/4-sqlquery/",
+	"title": "Truy vấn SQL Server bằng SSMS",
+	"tags": [],
+	"description": "",
+	"content": "Truy vấn SQL Server bằng SSMS 1. Tạo cơ sở dữ liệu Bây giờ hãy tạo một cơ sở dữ liệu có tên TutorialDB bằng cách thực hiện các bước sau:\nNhấp chuột phải vào máy chủ của bạn trong Object Explorer, sau đó chọn New Query .\nSao chép và dán đoạn mã T-SQL dưới đây vào cửa sổ truy vấn:\nUSE master\rGO\rIF NOT EXISTS (\rSELECT name\rFROM sys.databases\rWHERE name = N\u0026#39;TutorialDB\u0026#39;\r)\rCREATE DATABASE [TutorialDB]\rGO Thực thi truy vấn bằng cách chọn Execute hoặc nhấn F5 trên bàn phím của bạn.\nSau khi truy vấn xong, cơ sở dữ liệu mới TutorialDB sẽ xuất hiện trong danh sách cơ sở dữ liệu trong Object Explorer.. Nếu không hiển thị, hãy nhấp chuột phải vào nút Databases, sau đó chọn Refresh.\nTrong danh sách cơ sở dữ liệu, chọn cơ sở dữ liệu mà bạn muốn, như được hiển thị ở đây:\nSao chép và dán đoạn mã T-SQL dưới đây vào cửa sổ truy vấn:\nUSE [TutorialDB]\r-- Create a new table called \u0026#39;Customers\u0026#39; in schema \u0026#39;dbo\u0026#39;\r-- Drop the table if it already exists\rIF OBJECT_ID(\u0026#39;dbo.Customers\u0026#39;, \u0026#39;U\u0026#39;) IS NOT NULL\rDROP TABLE dbo.Customers\rGO\r-- Create the table in the specified schema\rCREATE TABLE dbo.Customers (\rCustomerId INT NOT NULL PRIMARY KEY, -- primary key column\rName NVARCHAR(50) NOT NULL,\rLocation NVARCHAR(50) NOT NULL,\rEmail NVARCHAR(50) NOT NULL\r);\rGO Thực thi truy vấn bằng cách chọn Execute hoặc nhấn F5 trên bàn phím của bạn.\nSau khi truy vấn xong, bảng mới Customers sẽ được hiển thị trong danh sách các bảng trong Object Explorer. Nếu bảng không được hiển thị, nhấp chuột phải vào TutorialDB \u0026gt; Tables trong Object Explorer, sau đó chọn Refresh.\n2. Chèn hàng Bây giờ hãy chèn một số hàng vào bảng Customers mà bạn đã tạo.\nDán đoạn mã T-SQL sau vào cửa sổ truy vấn và sau đó chọn Execute:\n-- Insert rows into table \u0026#39;Customers\u0026#39;\rINSERT INTO dbo.Customers\r([CustomerId],[Name],[Location],[Email])\rVALUES\r( 1, N\u0026#39;Orlando\u0026#39;, N\u0026#39;Australia\u0026#39;, N\u0026#39;\u0026#39;),\r( 2, N\u0026#39;Keith\u0026#39;, N\u0026#39;India\u0026#39;, N\u0026#39;keith0@adventure-works.com\u0026#39;),\r( 3, N\u0026#39;Donna\u0026#39;, N\u0026#39;Germany\u0026#39;, N\u0026#39;donna0@adventure-works.com\u0026#39;),\r( 4, N\u0026#39;Janet\u0026#39;, N\u0026#39;United States\u0026#39;, N\u0026#39;janet1@adventure-works.com\u0026#39;)\rGO 3. Truy vấn bảng và xem kết quả. Kết quả của truy vấn được hiển thị bên dưới cửa sổ văn bản truy vấn. Để truy vấn bảng Customers và xem các hàng đã được chèn, dán đoạn mã T-SQL sau vào cửa sổ truy vấn, sau đó chọn Execute:\nSELECT * FROM dbo.Customers; Kết quả của truy vấn sẽ được hiển thị dưới khu vực nơi văn bản đã được nhập:\nVậy là chúng ta đã hoàn thành việc tạo và truy vấn cơ sở dữ liệu, bây giờ hãy tiếp tục sang bước tiếp theo để xoá RDS\n"
+},
+{
+	"uri": "/vi/5-cleanupresource/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Xoá RDS SQL Server database Quay lại giao diện RDS trong Bảng điều khiển AWS.\nChọn Databases Chọn cơ sở dữ liệu mà bạn muốn xóa, ví dụ của chúng ta là database-1 Chọn Actions Chọn Delete Bỏ chọn Create final snapshot và Retain automated backups Chọn i acknowledge that upon instance deletion, automated backups, including system Nhập delete me để xác nhận việc xóa. Chọn Delete Vậy là chúng ta đã hoàn thành xong bài thực hành này, chúc các bạn thành công!\n"
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

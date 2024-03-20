@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Query a SQL Server instance using SSMS on Start with Amazon VPC and AWS VPN Site-to-Site.</title>
+    <link>/4-sqlquery/</link>
+    <description>Recent content in Query a SQL Server instance using SSMS on Start with Amazon VPC and AWS VPN Site-to-Site.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="/4-sqlquery/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
